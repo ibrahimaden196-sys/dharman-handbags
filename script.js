@@ -555,6 +555,129 @@ function initNewsletter() {
   });
 }
 
+
+/* ────────────────────────────────────────────────────────────
+   WHATSAPP CHECKOUT
+   ──────────────────────────────────────────────────────────── */
+function checkoutWhatsApp() {
+  if (cart.length === 0) {
+    showToast('<i class="fas fa-exclamation-circle"></i> Your cart is empty!');
+    return;
+  }
+
+  const phoneNumber = '905528610543';
+  const total = getCartTotal();
+  const shipping = total >= 100 ? 0 : 9.99;
+  const grand = total + shipping;
+
+  let message = '🛍️ *New Order — DHARMAN HANDBAGS*
+
+';
+  message += '*Order Details:*
+';
+  message += '─────────────────
+';
+
+  cart.forEach(item => {
+    const product = PRODUCTS.find(p => p.id == item.id);
+    if (product) {
+      message += '• ' + product.name + '
+';
+      message += '  Qty: ' + item.qty + ' × $' + product.price + '
+';
+      message += '  Color: ' + item.color + '
+';
+      message += '  Subtotal: $' + (product.price * item.qty).toFixed(2) + '
+
+';
+    }
+  });
+
+  message += '─────────────────
+';
+  message += '*Subtotal:* $' + total.toFixed(2) + '
+';
+  message += '*Shipping:* ' + (shipping === 0 ? 'Free' : '$' + shipping.toFixed(2)) + '
+';
+  message += '*TOTAL: $' + grand.toFixed(2) + '*
+
+';
+  message += '─────────────────
+';
+  message += 'Please send me your:
+';
+  message += '📍 Full Name
+';
+  message += '📍 Delivery Address
+';
+  message += '📍 Phone Number
+
+';
+  message += 'Thank you for shopping with DHARMAN HANDBAGS! 🖤';
+
+  const encoded = encodeURIComponent(message);
+  const url = 'https://wa.me/' + phoneNumber + '?text=' + encoded;
+  window.location.href = url;
+  closeCart();
+}
+
+
+function orderProductWhatsApp() {
+  var params  = new URLSearchParams(window.location.search);
+  var id      = parseInt(params.get('id')) || 1;
+  var product = PRODUCTS.find(function(p){ return p.id == id; }) || PRODUCTS[0];
+  if (!product) return;
+
+  var qtyInput = document.querySelector('.qty-selector input');
+  var qty = parseInt((qtyInput && qtyInput.value) || 1);
+  var colorEl = document.querySelector('.color-swatch.active');
+  var color = colorEl ? colorEl.dataset.color : '';
+  var total = product.price * qty;
+
+  var phoneNumber = '905528610543';
+  var message = '🛍️ *New Order — DHARMAN HANDBAGS*
+
+';
+  message += '*Product:* ' + product.name + '
+';
+  message += '*Price:* $' + product.price + '
+';
+  message += '*Quantity:* ' + qty + '
+';
+  message += '*Color:* ' + color + '
+';
+  message += '*Total: $' + total.toFixed(2) + '*
+
+';
+  message += '─────────────────
+';
+  message += 'Please send me your:
+';
+  message += '📍 Full Name
+';
+  message += '📍 Delivery Address
+';
+  message += '📍 Phone Number
+
+';
+  message += 'Thank you for shopping with DHARMAN HANDBAGS! 🖤';
+
+  var encoded = encodeURIComponent(message);
+  var url = 'https://wa.me/' + phoneNumber + '?text=' + encoded;
+  window.location.href = url;
+}
+
+function addToCartAndOpen() {
+  var params  = new URLSearchParams(window.location.search);
+  var id      = parseInt(params.get('id')) || 1;
+  var qtyInput = document.querySelector('.qty-selector input');
+  var qty = parseInt((qtyInput && qtyInput.value) || 1);
+  var colorEl = document.querySelector('.color-swatch.active');
+  var color = colorEl ? colorEl.dataset.color : null;
+  addToCart(id, qty, color);
+  toggleCart();
+}
+
 /* ────────────────────────────────────────────────────────────
    INIT
    ──────────────────────────────────────────────────────────── */
