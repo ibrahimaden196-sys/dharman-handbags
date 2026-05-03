@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login — DHARMAN</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',sans-serif;background:#0d0608;color:#F5EFE6;min-height:100vh;display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden}
+    body::before{content:'';position:fixed;top:-20%;left:-10%;width:60vw;height:60vw;background:radial-gradient(circle,rgba(109,7,26,0.22) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+    body::after{content:'';position:fixed;bottom:-20%;right:-10%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(212,175,55,0.07) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+    .card{position:relative;z-index:10;width:100%;max-width:420px;margin:20px;padding:48px 44px;background:#160b0d;border:1px solid rgba(212,175,55,0.18);border-radius:20px;box-shadow:0 32px 80px rgba(0,0,0,0.7)}
+    .brand{text-align:center;margin-bottom:32px}
+    .brand-name{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;letter-spacing:0.06em}
+    .brand-name span{color:#D4AF37}
+    .brand-pill{display:inline-flex;align-items:center;gap:6px;margin-top:8px;background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.2);border-radius:100px;padding:4px 14px;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(212,175,55,0.7)}
+    .brand-pill::before{content:'';width:6px;height:6px;background:#2ecc71;border-radius:50%}
+    h1{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:500;text-align:center;margin-bottom:6px}
+    .subtitle{text-align:center;font-size:0.78rem;color:rgba(245,239,230,0.4);margin-bottom:24px}
+    .hint{background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.15);border-radius:8px;padding:10px 14px;font-size:0.72rem;color:rgba(212,175,55,0.65);margin-bottom:20px;line-height:1.7}
+    .hint strong{color:rgba(212,175,55,0.9)}
+    .error{display:none;align-items:center;gap:8px;background:rgba(231,76,60,0.1);border:1px solid rgba(231,76,60,0.3);border-radius:8px;padding:10px 14px;font-size:0.78rem;color:#e74c3c;margin-bottom:16px}
+    .error.show{display:flex}
+    .field{margin-bottom:18px}
+    label{display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,239,230,0.4);margin-bottom:8px}
+    .input-wrap{position:relative}
+    input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:13px 44px 13px 16px;font-size:0.88rem;font-family:'DM Sans',sans-serif;color:#F5EFE6;outline:none;transition:border-color 0.25s,box-shadow 0.25s}
+    input:focus{border-color:rgba(212,175,55,0.5);box-shadow:0 0 0 3px rgba(212,175,55,0.07)}
+    input::placeholder{color:rgba(255,255,255,0.18)}
+    .eye-btn{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(255,255,255,0.25);font-size:0.82rem;cursor:pointer;padding:4px;transition:color 0.2s}
+    .eye-btn:hover{color:rgba(212,175,55,0.6)}
+    .btn-login{width:100%;background:#6D071A;color:white;border:none;border-radius:10px;padding:15px;font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.25s,transform 0.2s,box-shadow 0.25s;box-shadow:0 4px 20px rgba(109,7,26,0.45);margin-top:6px}
+    .btn-login:hover:not(:disabled){background:#8a0c22;transform:translateY(-1px)}
+    .btn-login:disabled{opacity:0.6;cursor:not-allowed}
+    .back-link{display:block;text-align:center;margin-top:22px;font-size:0.72rem;color:rgba(212,175,55,0.45);text-decoration:none;transition:color 0.2s}
+    .back-link:hover{color:#D4AF37}
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="brand">
+    <div class="brand-name">DHARMAN <span>HANDBAGS</span></div>
+    <div class="brand-pill">Admin Portal</div>
+  </div>
+  <h1>Welcome Back</h1>
+  <p class="subtitle">Sign in to manage your store</p>
+  <div class="hint">
+    <strong>Email:</strong> hellodharman@gmail.com<br>
+    <strong>Password:</strong> admin123
+  </div>
+  <div class="error" id="errorBox">
+    <i class="fas fa-circle-exclamation"></i>
+    <span id="errorText">Incorrect email or password.</span>
+  </div>
+  <div class="field">
+    <label for="emailInput">Email Address</label>
+    <div class="input-wrap">
+      <input type="email" id="emailInput" placeholder="hellodharman@gmail.com" autocomplete="email">
+    </div>
+  </div>
+  <div class="field">
+    <label for="passwordInput">Password</label>
+    <div class="input-wrap">
+      <input type="password" id="passwordInput" placeholder="••••••••" autocomplete="current-password">
+      <button class="eye-btn" type="button" onclick="togglePwd()"><i class="fas fa-eye" id="eyeIcon"></i></button>
+    </div>
+  </div>
+  <button class="btn-login" id="loginBtn" onclick="doLogin()">Sign In</button>
+  <a href="index.html" class="back-link"><i class="fas fa-arrow-left" style="font-size:0.6rem;margin-right:4px;"></i> Back to Store</a>
+</div>
+<script>
+  document.getElementById('emailInput').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
+  document.getElementById('passwordInput').addEventListener('keydown', e => { if(e.key==='Enter') doLogin(); });
+  function togglePwd() {
+    var inp = document.getElementById('passwordInput');
+    var ico = document.getElementById('eyeIcon');
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+    ico.className = inp.type === 'password' ? 'fas fa-eye' : 'fas fa-eye-slash';
+  }
+  function doLogin() {
+    var email = document.getElementById('emailInput').value.trim();
+    var password = document.getElementById('passwordInput').value;
+    var errorBox = document.getElementById('errorBox');
+    var btn = document.getElementById('loginBtn');
+    errorBox.classList.remove('show');
+    if (!email || !password) { document.getElementById('errorText').textContent = 'Please enter both email and password.'; errorBox.classList.add('show'); return; }
+    btn.disabled = true; btn.textContent = 'Signing in…';
+    setTimeout(function() {
+      if (email === 'hellodharman@gmail.com' && password === 'admin123') {
+        try { sessionStorage.setItem('dharman_admin','true'); } catch(e) {}
+        try { localStorage.setItem('dharman_admin','true'); } catch(e) {}
+        window.location.href = 'admin.html';
+      } else {
+        btn.disabled = false; btn.textContent = 'Sign In';
+        document.getElementById('errorText').textContent = 'Incorrect email or password.';
+        errorBox.classList.add('show');
+        document.getElementById('passwordInput').value = '';
+        document.getElementById('passwordInput').focus();
+      }
+    }, 700);
+  }
+</script>
+</body>
+</html>

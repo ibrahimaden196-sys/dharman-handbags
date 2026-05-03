@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — DHARMAN HANDBAGS</title>
+  <meta name="description" content="View detailed product information for DHARMAN HANDBAGS. Full gallery, color options, and secure checkout.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* Product page supplemental styles */
+    .related-section {
+      padding: 80px 0 100px;
+      background: var(--beige);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    @media (max-width: 900px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 540px) { .related-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar scrolled">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">DHARMAN <span>HANDBAGS</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="shop.html?cat=New+Arrivals">New Arrivals</a></li>
+      <li><a href="shop.html?sort=popular">Best Sellers</a></li>
+      <li><a href="index.html#story">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-icons">
+      <button class="search-toggle" aria-label="Search"><i class="fas fa-search"></i></button>
+      <button class="cart-toggle" aria-label="Cart" style="position:relative;">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count" style="display:none;">0</span>
+      </button>
+      <button class="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Search Bar -->
+<div class="search-bar">
+  <i class="fas fa-search" style="color:var(--text-muted);font-size:0.85rem;"></i>
+  <input type="text" placeholder="Search for bags, styles, collections…">
+  <button class="search-close"><i class="fas fa-times"></i></button>
+</div>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="shop.html">Shop</a>
+  <a href="shop.html?cat=New+Arrivals">New Arrivals</a>
+  <a href="shop.html?sort=popular">Best Sellers</a>
+  <a href="index.html#story">About</a>
+  <a href="index.html#contact">Contact</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PRODUCT PAGE
+═══════════════════════════════════════════════════════════ -->
+<main class="product-page">
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="justify-content:flex-start;margin-bottom:36px;">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right" style="font-size:0.55rem;"></i>
+      <a href="shop.html">Shop</a>
+      <i class="fas fa-chevron-right" style="font-size:0.55rem;"></i>
+      <span class="product-detail-name-breadcrumb">Product</span>
+    </div>
+
+    <div class="product-page-grid">
+
+      <!-- ── GALLERY ───────────────────────────────────────── -->
+      <div class="gallery-main">
+        <div class="gallery-img-wrap">
+          <img class="gallery-main-img"
+               src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=800&q=85"
+               alt="Product image" fetchpriority="high">
+          <div class="gallery-zoom-hint">
+            <i class="fas fa-search-plus"></i> Click to zoom
+          </div>
+        </div>
+        <div class="gallery-thumbs"></div>
+      </div>
+
+      <!-- ── PRODUCT DETAILS ───────────────────────────────── -->
+      <div class="product-detail-panel fade-in">
+        <div class="product-detail-category">Tote Bags</div>
+        <h1 class="product-detail-name">Amira Signature Tote</h1>
+
+        <div class="product-detail-rating">
+          <div class="product-detail-stars">★★★★★</div>
+          <span class="product-detail-rating-num">48 reviews</span>
+        </div>
+
+        <div class="product-detail-price">$89</div>
+
+        <p class="product-detail-desc">
+          A refined everyday tote in supple full-grain leather. Structured silhouette, polished gold hardware, and generous interior space — designed for the modern woman who commands every room.
+        </p>
+
+        <!-- Color Selection -->
+        <div class="detail-label">Select Color</div>
+        <div class="color-options"></div>
+
+        <!-- Qty + Add to Cart -->
+        <div class="detail-label">Quantity</div>
+        <div class="qty-cta" style="margin-top:10px;margin-bottom:12px;">
+          <div class="qty-selector">
+            <button class="qty-minus" aria-label="Decrease">−</button>
+            <input type="number" min="1" max="10" value="1" readonly aria-label="Quantity">
+            <button class="qty-plus" aria-label="Increase">+</button>
+          </div>
+          <button class="btn-add-cart btn-primary" style="height:52px;border-radius:var(--radius-sm);">
+            <i class="fas fa-shopping-bag"></i> Add to Cart
+          </button>
+        </div>
+        <button class="btn-buy-now">Buy Now — Secure Checkout</button>
+
+        <!-- Trust Signals -->
+        <div class="product-trust">
+          <div class="trust-item"><i class="fas fa-truck"></i> Free shipping over $100</div>
+          <div class="trust-item"><i class="fas fa-undo"></i> 30-day free returns</div>
+          <div class="trust-item"><i class="fas fa-lock"></i> Secure payment</div>
+          <div class="trust-item"><i class="fas fa-award"></i> Authenticity guaranteed</div>
+        </div>
+
+        <!-- Accordion -->
+        <div class="product-accordion">
+          <div class="accordion-item open">
+            <button class="accordion-header">
+              Product Details
+              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="accordion-body">
+              Crafted from premium full-grain Italian leather with a suede-lined interior. Features two internal zip pockets, four card slots, and a central zip divider. Magnetic snap closure with a secondary zip for security. Adjustable shoulder strap included (removable). Gold-plated hardware. Dust bag included.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Dimensions & Care
+              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="accordion-body">
+              <strong>Size:</strong> 38cm W × 28cm H × 14cm D · <strong>Strap drop:</strong> 55cm.<br><br>
+              <strong>Care:</strong> Wipe gently with a soft, damp cloth. Store in the provided dust bag away from direct sunlight. Apply leather conditioner every 3–4 months for optimal appearance.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">
+              Shipping & Returns
+              <span class="accordion-icon"><i class="fas fa-plus"></i></span>
+            </button>
+            <div class="accordion-body">
+              Orders ship within 1–2 business days. Standard delivery 3–5 business days. Free returns within 30 days of receipt — items must be unused and in original packaging with tags attached. Return shipping label provided.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /product-page-grid -->
+
+  </div>
+</main>
+
+<!-- ═══════════════════════════════════════════════════════════
+     RELATED PRODUCTS
+═══════════════════════════════════════════════════════════ -->
+<section class="related-section">
+  <div class="container">
+    <div class="section-header fade-in" style="margin-bottom:40px;">
+      <div class="section-label">You May Also Love</div>
+      <h2 class="section-title">Related <em>Styles</em></h2>
+    </div>
+    <div class="related-grid" id="related-grid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">DHARMAN <span>HANDBAGS</span></a>
+        <p>Luxury handbags crafted for women who carry confidence with every step.</p>
+        <div class="social-links">
+          <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="social-link" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html">All Products</a></li>
+          <li><a href="shop.html?cat=Tote+Bags">Tote Bags</a></li>
+          <li><a href="shop.html?cat=Crossbody">Crossbody</a></li>
+          <li><a href="shop.html?cat=Evening+Bags">Evening Bags</a></li>
+          <li><a href="shop.html?cat=Everyday+Essentials">Everyday Essentials</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">Shipping & Delivery</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Track My Order</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@dharmanhandbags.com">hello@dharmanhandbags.com</a></li>
+          <li><a href="#">+1 (800) 000-0000</a></li>
+          <li><a href="#">Mon–Fri, 9am–6pm EST</a></li>
+          <li style="margin-top:16px;"><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 DHARMAN HANDBAGS. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox">
+  <button class="lightbox-close"><i class="fas fa-times"></i></button>
+  <img src="" alt="Product zoom">
+</div>
+
+<!-- CART PANEL -->
+<div class="cart-overlay"></div>
+<div class="cart-panel">
+  <div class="cart-header">
+    <div class="cart-title">Your Bag</div>
+    <button class="cart-close"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items">
+    <div class="cart-empty">
+      <div class="cart-empty-icon">🛍️</div>
+      <h3>Your cart is empty</h3>
+      <p>Add some beautiful pieces to get started.</p>
+    </div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span class="cart-subtotal-val">$0.00</span>
+    </div>
+    <div class="cart-subtotal">
+      <span>Shipping</span>
+      <span class="cart-shipping-val">—</span>
+    </div>
+    <div class="cart-subtotal total">
+      <span>Total</span>
+      <span class="cart-total-val">$0.00</span>
+    </div>
+    <a href="#" class="cart-checkout-btn">Proceed to Checkout</a>
+    <span class="cart-continue">← Continue Shopping</span>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="script.js"></script>
+<script>
+  // Related products — runs after Supabase data loads
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var params  = new URLSearchParams(window.location.search);
+      var id      = parseInt(params.get('id')) || 1;
+      var products = window.PRODUCTS || [];
+      var related  = products.filter(function(p){ return p.id != id; }).slice(0, 3);
+      var grid     = document.getElementById('related-grid');
+      if (grid && related.length) {
+        grid.innerHTML = related.map(function(p, i){ return window.renderProductCard(p, i+1); }).join('');
+        if (window.initScrollAnimations) window.initScrollAnimations();
+      }
+      var bc   = document.querySelector('.product-detail-name-breadcrumb');
+      var name = document.querySelector('.product-detail-name');
+      if (bc && name) bc.textContent = name.textContent;
+    }, 1500);
+  });
+</script>
+</body>
+</html>
